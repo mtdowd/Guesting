@@ -1,0 +1,40 @@
+<h1>Enter Your Bar's Information</h1>
+
+<%= form_for @bar do |form| %>
+  <% if @bar.errors.any? %>
+    <p>
+      <%= render "error_messages", errors: @bar.errors %>
+    </p>
+  <% end %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+  <div>
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+  <div>
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+  <div>
+    <%= form.label :zip %>
+    <%= form.text_field :zip %>
+  </div>
+  <div>
+    <%= form.label :phone %>
+    <%= form.telephone_field :phone %>
+  </div>
+  <div>
+    <%= form.label :website %>
+    <%= form.text_field :website %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
