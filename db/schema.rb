@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201220307) do
+ActiveRecord::Schema.define(version: 20141201224756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bars", force: true do |t|
+    t.string   "name",       null: false
+    t.string   "address",    null: false
+    t.string   "city",       null: false
+    t.string   "state",      null: false
+    t.string   "zip"
+    t.string   "phone",      null: false
+    t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bars", ["name", "address", "city", "state"], name: "index_bars_on_name_and_address_and_city_and_state", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",           null: false
