@@ -13,6 +13,12 @@
     <%= form.password_field :password %>
   </div>
   <div>
+    <%= form.radio_button(:manager, false) %>
+    <%= form.label(:user_role, "I am a bartender") %>
+    <%= form.radio_button(:manager, true) %>
+    <%= form.label(:user_role, "I am a bar manager") %>
+  </div>
+  <div>
     <%= form.submit "Sign up" %>
   </div>
 <% end %>
