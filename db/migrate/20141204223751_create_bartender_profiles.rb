@@ -1,12 +1,11 @@
-class CreateProfiles < ActiveRecord::Migration
+class CreateBartenderProfiles < ActiveRecord::Migration
   def change
-    create_table :profiles do |t|
+    create_table :bartender_profiles do |t|
       t.string :name, null: false
       t.string :phone, null: false
-      t.string :email, null: false
+      t.string :email
       t.string :twitter
       t.string :facebook
-      t.belongs_to :user, index: true
 
       t.timestamps
     end

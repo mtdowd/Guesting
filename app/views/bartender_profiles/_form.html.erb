@@ -1,0 +1,21 @@
+<%= form_for profile do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+  <div>
+    <%= form.label :twitter %>
+    <%= form.text_field :twitter %>
+  </div>
+  <div>
+    <%= form.label :facebook %>
+    <%= form.text_field :facebook %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

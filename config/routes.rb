@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :bars
-  resources :profiles, only: [:new, :create]
+  resources :manager_profiles, only: [:new, :create]
+  resources :bartender_profiles, only: [:new, :create]
 end

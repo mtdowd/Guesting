@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.valid?
       sign_in(@user)
-      redirect_to new_profile_path
+      redirect_to profile_path(current_user)
     else
       render :new
     end
@@ -20,5 +20,13 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password, :manager)
+  end
+
+  def profile_path(current_user)
+    if current_user.manager?
+      new_manager_profile_path
+    else
+      new_bartender_profile_path
+    end
   end
 end
