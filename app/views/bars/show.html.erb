@@ -1,10 +1,12 @@
 <%= render @bar %>
 
-<div>
-  <%= link_to "Update Bar Information", edit_bar_path(@bar) %>
-</div>
-<div>
-  <%= button_to "Delete Bar", bar_path(@bar),
-    method: :delete,
-    data: { confirm: "Please confirm deletion" } %>
-</div>
+<% if current_user.owns?(@bar) %>
+  <div>
+    <%= link_to "Update Bar Information", edit_bar_path(@bar) %>
+  </div>
+  <div>
+    <%= button_to "Delete Bar", bar_path(@bar),
+      method: :delete,
+      data: { confirm: "Please confirm deletion" } %>
+  </div>
+<% end %>

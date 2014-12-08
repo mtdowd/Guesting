@@ -24,10 +24,18 @@ class BarsController < ApplicationController
 
   def edit
     bar
+    if current_user.owns?(@bar)
+      bar
+    else
+      redirect_to @bar
+    end
   end
 
   def update
-    bar.update(bar_params)
+    bar
+    if current_user.owns?(@bar)
+      bar.update(bar_params)
+    end
 
     if @bar.save
       redirect_to @bar
@@ -37,7 +45,10 @@ class BarsController < ApplicationController
   end
 
   def destroy
-    bar.destroy
+    bar
+    if current_user.owns?(@bar)
+      bar.destroy
+    end
 
     redirect_to bars_path
   end
@@ -53,7 +64,7 @@ class BarsController < ApplicationController
       :state,
       :website,
       :zip
-    )
+    ).merge(user: current_user)
   end
 
   def bar

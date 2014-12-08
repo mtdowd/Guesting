@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204224022) do
+ActiveRecord::Schema.define(version: 20141208200549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 20141204224022) do
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "bars", ["name", "address", "city", "state"], name: "index_bars_on_name_and_address_and_city_and_state", using: :btree
+  add_index "bars", ["user_id"], name: "index_bars_on_user_id", using: :btree
 
   create_table "bartender_profiles", force: true do |t|
     t.string   "name",       null: false
