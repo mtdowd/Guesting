@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_one :profile
+  belongs_to :profile, polymorphic: true
 
   validates :email, presence: true, uniqueness: true
   validates :manager, inclusion: { in: [true, false] }
