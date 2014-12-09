@@ -1,14 +1,16 @@
-<h4><%= link_to bar.name, bar %></h4>
+<h4 class="profile"><%= link_to bar.name, bar %></h4>
 
-<%= bar.address %>
-<div>
-  <%= bar.city %>,
-  <%= bar.state %>
-  <%= bar.zip %>
-</div>
-<div>
-  <%= bar.phone %>
-</div>
-<div>
-  <%= bar.website %>
-</div>
+<section class="container">
+  <%= bar.address %>
+  <div>
+    <%= bar.city %>,
+    <%= bar.state %>
+    <%= bar.zip %>
+  </div>
+  <div>
+    <%= bar.phone %>
+  </div>
+  <div>
+    <%= bar.website %>
+  </div>
+</section>

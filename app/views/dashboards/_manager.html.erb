@@ -1,7 +1,9 @@
-<h4>Your Bars:</h4>
+<section class="container">
+  <h1 class="results">Your Bars</h1>
 
-<%= render user.bars %>
+  <%= render user.bars %>
 
-<h4>
-  <%= link_to "Add Your Bar", new_bar_path %>
-</h4>
+  <h4>
+    <%= link_to "Create New Bar", new_bar_path, class: "button" %>
+  </h4>
+</section>

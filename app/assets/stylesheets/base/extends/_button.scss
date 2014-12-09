@@ -20,3 +20,19 @@
     opacity: 0.5;
   }
 }
+
+.button, button,
+input[type="submit"] {
+  @extend %button;
+  @include appearance(none);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-right: 0.25em;
+}
+
+.secondary {
+  background: #6DADF9;
+}

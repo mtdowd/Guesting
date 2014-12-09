@@ -1,7 +1,9 @@
-<h1>Welcome <%= current_user.profile.name %></h1>
+<section class="container">
+  <h1 class="profile">Welcome <%= current_user.profile.name %></h1>
 
-<% if current_user.manager? %>
-  <%= render "manager", user: current_user %>
-<% else %>
-  <%= render "bartender" %>
-<% end %>
+  <% if current_user.manager? %>
+    <%= render "manager", user: current_user %>
+  <% else %>
+    <%= render "bartender" %>
+  <% end %>
+</section>
