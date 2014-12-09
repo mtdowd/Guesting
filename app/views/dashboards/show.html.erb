@@ -1,1 +1,7 @@
-<h1>Welcome <%= current_user.profile.name %>
+<h1>Welcome <%= current_user.profile.name %></h1>
+
+<% if current_user.manager? %>
+  <%= render "manager", user: current_user %>
+<% else %>
+  <%= render "bartender" %>
+<% end %>
