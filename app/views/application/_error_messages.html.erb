@@ -1,5 +1,5 @@
 There were <%= pluralize(errors.count, "error") %>:
-<ul>
+<ul class="container">
   <% errors.full_messages.each do |error_message| %>
     <li><%= error_message %></li>
   <% end %>

@@ -1,4 +1,4 @@
-<%= form_for bar do |form| %>
+<%= form_for bar, html: { class: "no-info" } do |form| %>
   <% if bar.errors.any? %>
     <p>
       <%= render "error_messages", errors: bar.errors %>

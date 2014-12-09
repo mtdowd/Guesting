@@ -1,8 +1,8 @@
-<ul>
+<section class="container">
   <% bars.each do |bar| %>
-    <li>
+    <h1 class="title-ha">
       <%= link_to bar.name, bar %>
       &mdash; <%= bar.city %>, <%= bar.state %>
-    </li>
+    </h1>
   <% end %>
-</ul>
+</section>
