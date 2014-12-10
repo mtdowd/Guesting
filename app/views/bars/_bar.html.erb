@@ -13,4 +13,10 @@
   <div>
     <%= bar.website %>
   </div>
+  <div>
+    <p>Owner: <%= bar.owner_name %></p>
+    <p>Bartenders:
+      <ul><%= render bar.users %></ul>
+    </p>
+  </div>
 </section>

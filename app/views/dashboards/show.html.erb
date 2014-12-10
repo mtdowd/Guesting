@@ -4,6 +4,6 @@
   <% if current_user.manager? %>
     <%= render "manager", user: current_user %>
   <% else %>
-    <%= render "bartender" %>
+    <%= render "bartender", user: current_user %>
   <% end %>
 </section>
