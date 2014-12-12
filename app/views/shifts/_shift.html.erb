@@ -1,0 +1,11 @@
+<section class="container">
+  <div>
+    <p>
+    <%= "Date: #{shift.shift_date.strftime("%A, %-m/%d/%Y")},
+    Time: #{shift.shift_start.strftime("%l:%M %P")}" %>
+    </p>
+  </div>
+  <div>
+    <p>Details: <%= shift.details %></p>
+  </div>
+</section>

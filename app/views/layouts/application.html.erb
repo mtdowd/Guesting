@@ -13,8 +13,6 @@
       <%= link_to "Guesting", root_path %>
     </h1>
 
-    <%= render "flashes" -%>
-
     <% if signed_in? %>
       <div class="sign-out">
         <%= link_to "Dashboard", root_path, class: "button" %>
@@ -26,8 +24,11 @@
         <%= link_to "Sign Up", new_user_path, class: "button" %>
       </div>
     <% end %>
+
   </header>
   <body class="<%= body_class %>">
+
+    <%= render "flashes" -%>
 
     <%= yield %>
     <%= render "javascript" %>

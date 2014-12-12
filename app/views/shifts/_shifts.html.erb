@@ -1,0 +1,9 @@
+<section class="container">
+  <% shifts.each do |shift| %>
+    <h1 class="title-ha">
+      <%= link_to "#{shift.shift_date.strftime("%A, %-m/%d/%Y")},
+      Time: #{shift.shift_start.strftime("%l:%M %P")}",
+      [bar, shift] %>
+    </h1>
+  <% end %>
+</section>

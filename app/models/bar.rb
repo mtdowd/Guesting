@@ -4,6 +4,8 @@ class Bar < ActiveRecord::Base
 
   belongs_to :owner, class_name: "User", foreign_key: :user_id
 
+  has_many :shifts
+
   delegate :name, to: :owner, prefix: true
 
   validates :address, presence: true
