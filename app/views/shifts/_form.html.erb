@@ -1,0 +1,22 @@
+<%= form_for [bar, shift], html: { class: "no-info" } do |form| %>
+  <% if shift.errors.any? %>
+    <p>
+      <%= render "error_messages", errors: shift.errors %>
+    </p>
+  <% end %>
+  <div>
+    <%= form.label :shift_date %>
+    <%= form.date_field :shift_date %>
+  </div>
+  <div>
+    <%= form.label :shift_start %>
+    <%= form.time_field :shift_start %>
+  </div>
+  <div>
+    <%= form.label :details %>
+    <%= form.text_area :details %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

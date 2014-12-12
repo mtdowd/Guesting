@@ -1,5 +1,5 @@
 <section class="container">
-  <h1 class="profile">Welcome <%= current_user.profile.name %></h1>
+  <h1 class="profile">Welcome <%= current_user.name %></h1>
 
   <% if current_user.manager? %>
     <%= render "manager", user: current_user %>

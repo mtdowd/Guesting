@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
 
-  resources :bars
+  resources :bars do
+    resources :shifts
+  end
   resources :manager_profiles, only: [:new, :create]
   resources :bartender_profiles, only: [:new, :create]
 end

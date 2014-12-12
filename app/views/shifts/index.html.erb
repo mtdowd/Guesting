@@ -1,0 +1,18 @@
+<section class="container">
+  <h1 class="profile"><%= @bar.name %></h1>
+
+  <section class="container">
+    <h2 class="results">Shifts</h2>
+
+    <%= render "shifts",
+      shifts: @shifts.by_most_recent,
+      bar: @bar %>
+
+    <% if current_user.owns?(@bar) %>
+      <div>
+        <%= link_to "Create Shift", new_bar_shift_path(@bar),
+          class: "button" %>
+      </div>
+    <% end %>
+  </section>
+</section>

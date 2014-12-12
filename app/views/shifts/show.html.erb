@@ -1,0 +1,22 @@
+<section class="container">
+  <h1 class="profile"><%= @shift.bar_name %></h1>
+
+  <%= render @shift, bar: @shift.bar %>
+
+  <% if current_user.owns?(@shift.bar) %>
+    <p>
+      <%= link_to "Update Shift", edit_bar_shift_path(@shift.bar, @shift),
+        class: "button" %>
+    </p>
+    <p>
+      <%= button_to "Delete Shift", bar_shift_path(@shift.bar, @shift),
+        method: :delete,
+        data: { confirm: "Please confirm deletion" } %>
+    </p>
+  <% end %>
+
+  <p class="title-ha">
+    <%= link_to "Return to Shifts", bar_shifts_path(@shift.bar),
+      class: "button secondary" %>
+  </p>
+</section>
