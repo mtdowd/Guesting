@@ -19,4 +19,12 @@ class Bar < ActiveRecord::Base
   validates :state, presence: true
   validates :user_id, presence: true
   validates :zip, presence: true
+
+  def add_member(user)
+    users << user
+  end
+
+  def remove_member(user)
+    users.delete(user)
+  end
 end

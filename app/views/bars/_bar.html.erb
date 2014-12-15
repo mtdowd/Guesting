@@ -13,10 +13,12 @@
   <div>
     <%= bar.website %>
   </div>
-  <div>
-    <p>Owner: <%= bar.owner_name %></p>
-    <p>Bartenders:
-      <ul><%= render bar.users %></ul>
-    </p>
-  </div>
+  <% if current_user.owns_or_works_at?(bar) %>
+    <div>
+      <p>Owner: <%= bar.owner_name %></p>
+      <p>Bartenders:
+        <ul><%= render bar.users %></ul>
+      </p>
+    </div>
+  <% end %>
 </section>

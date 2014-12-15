@@ -1,19 +1,9 @@
 <section class="container">
-  <%= render @bar %>
+  <%= render @bar, user: current_user %>
 
-  <section class="container">
-    <p>
-    <%= link_to "Current Shifts", bar_shifts_path(@bar), class: "button secondary" %>
-    </p>
-    <% if current_user.owns?(@bar) %>
-      <div>
-        <%= link_to "Update Bar Information", edit_bar_path(@bar), class: "button" %>
-      </div>
-      <div>
-        <%= button_to "Delete Bar", bar_path(@bar),
-          method: :delete,
-          data: { confirm: "Please confirm deletion" } %>
-      </div>
-    <% end %>
-  </section>
+  <% if current_user.manager? %>
+    <%= render "manager", bar: @bar, user: current_user %>
+  <% else %>
+    <%= render "bartender", bar: @bar, user: current_user %>
+  <% end %>
 </section>
