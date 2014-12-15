@@ -15,4 +15,12 @@ class User < ActiveRecord::Base
   def owns?(bar)
     owned_bars.include?(bar)
   end
+
+  def works_at?(bar)
+    bars.include?(bar)
+  end
+
+  def owns_or_works_at?(bar)
+    owns?(bar) || works_at?(bar)
+  end
 end

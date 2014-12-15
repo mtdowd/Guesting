@@ -1,0 +1,28 @@
+<section class="container">
+    <% if user.works_at?(bar) %>
+      <p class="title-ha">
+        <%= link_to(
+          "Available Shifts",
+          bar_shifts_path(bar),
+          class: "button secondary"
+        ) %>
+      </p>
+      <p>
+        <%= button_to(
+          "Leave Bar",
+          leave_bar_path(bar),
+          method: :delete,
+          class: "button"
+        ) %>
+      </p>
+    <% else %>
+      <p>
+        <%= button_to(
+          "Join Bar",
+          join_bar_path(bar),
+          method: :post,
+          class: "button"
+        ) %>
+      </p>
+    <% end %>
+</section>
