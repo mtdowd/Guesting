@@ -1,0 +1,25 @@
+<section class="container">
+  <% if user.working?(shift) %>
+    <%= button_to(
+      "Give Shift Back",
+      return_shift_path(shift),
+      method: :delete,
+      class: "button"
+    ) %>
+  <% else %>
+    <%= button_to(
+      "Take Shift",
+      take_shift_path(shift),
+      method: :post,
+      class: "button"
+    ) %>
+  <% end %>
+
+  <p class="title-ha">
+    <%= link_to(
+      "Return to Shifts",
+      bar_shifts_path(shift.bar),
+      class: "button secondary"
+    ) %>
+  </p>
+</section>

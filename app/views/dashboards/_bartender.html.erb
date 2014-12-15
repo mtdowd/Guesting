@@ -1,7 +1,7 @@
 <section class="container">
   <h4 class="results">Your Bars</h4>
 
-  <%= render user.bars %>
+  <%= render user.bars.order(name: :asc) %>
 
   <h4>
     <%= link_to "The Guesting Bars", bars_path, class: "button" %>

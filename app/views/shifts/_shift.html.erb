@@ -8,4 +8,11 @@
   <div>
     <p>Details: <%= shift.details %></p>
   </div>
+  <% if current_user.owns_or_works_at?(bar) %>
+    <div>
+      <ul>Bartenders: 
+        <li><%= render shift.users %><li>
+      </ul>
+    </div>
+  <% end %>
 </section>

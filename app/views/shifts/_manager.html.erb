@@ -1,0 +1,22 @@
+<section class="container">
+  <% if user.owns?(shift.bar) %>
+    <p class="button">
+      <%= link_to "Update Shift", edit_bar_shift_path(shift.bar, shift) %>
+    </p>
+    <p>
+      <%= button_to(
+        "Delete Shift",
+        bar_shift_path(shift.bar, shift),
+        method: :delete,
+        data: { confirm: "Are you sure" }
+      ) %>
+    </p>
+    <p class="title-ha">
+    <%= link_to(
+      "Return to Shifts",
+      bar_shifts_path(shift.bar),
+      class: "button secondary"
+    ) %>
+    </p>
+  <% end %>
+</section>

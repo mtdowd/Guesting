@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   belongs_to :profile, polymorphic: true
 
+  has_many :shift_memberships, dependent: :destroy
+  has_many :shifts, through: :shift_memberships
+
   delegate :name, to: :profile
 
   validates :email, presence: true, uniqueness: true
@@ -22,5 +25,9 @@ class User < ActiveRecord::Base
 
   def owns_or_works_at?(bar)
     owns?(bar) || works_at?(bar)
+  end
+
+  def working?(shift)
+    shifts.include?(shift)
   end
 end

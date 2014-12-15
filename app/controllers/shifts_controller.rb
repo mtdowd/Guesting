@@ -1,5 +1,7 @@
 class ShiftsController < ApplicationController
+  before_action :require_bar_owner, only: [:new, :create]
   before_action :require_owner, only: [:edit, :update, :destroy]
+  before_action :require_membership, only: [:show]
 
   def index
     find_bar
@@ -21,7 +23,6 @@ class ShiftsController < ApplicationController
   end
 
   def show
-    find_shift
   end
 
   def edit
@@ -43,10 +44,24 @@ class ShiftsController < ApplicationController
 
   private
 
+  def require_bar_owner
+    find_bar
+    unless current_user.owns?(@bar)
+      redirect_to @bar
+    end
+  end
+
   def require_owner
     find_shift
     unless current_user.owns?(@shift.bar)
       redirect_to [@shift.bar, @shift]
+    end
+  end
+
+  def require_membership
+    find_shift
+    unless current_user.owns_or_works_at?(@shift.bar)
+      redirect_to @shift.bar
     end
   end
 
