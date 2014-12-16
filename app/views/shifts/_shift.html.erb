@@ -8,9 +8,13 @@
   <div>
     <p>Details: <%= shift.details %></p>
   </div>
+  <div>
+    <p>Guest Bartenders Needed: <%= shift.bartender_count %></p>
+  </div>
   <% if current_user.owns_or_works_at?(bar) %>
     <div>
-      <ul>Bartenders: 
+      <p>Guest Bartenders Assigned: <%= shift.users.count %></p>
+      <ul>
         <li><%= render shift.users %><li>
       </ul>
     </div>

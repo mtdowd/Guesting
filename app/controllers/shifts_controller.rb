@@ -81,6 +81,7 @@ class ShiftsController < ApplicationController
 
   def shift_params
     params.require(:shift).permit(
+      :bartender_count,
       :details,
       :shift_date,
       :shift_start

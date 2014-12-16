@@ -1,0 +1,11 @@
+<section class="container">
+  <% shifts.each do |shift| %>
+    <% if shift.users.count < shift.bartender_count %>
+      <h3 class="title-ha">
+        <%= link_to "#{shift.shift_date.strftime("%A, %-m/%d/%Y")},
+          Time: #{shift.shift_start.strftime("%l:%M %P")}",
+          [bar, shift] %>
+      </h3>
+    <% end %>
+  <% end %>
+</section>

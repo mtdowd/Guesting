@@ -1,4 +1,7 @@
 <section class="container">
+
+  <%= render shift, bar: shift.bar %>
+
   <% if user.owns?(shift.bar) %>
     <p class="button">
       <%= link_to "Update Shift", edit_bar_shift_path(shift.bar, shift) %>

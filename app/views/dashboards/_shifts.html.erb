@@ -1,0 +1,11 @@
+<section class="container">
+  <div>
+    <% shifts.each do |shift| %>
+      <p>
+        <%= link_to "Bar: #{shift.bar_name}", shift.bar %> &mdash;
+        <%= link_to "Date: #{shift.shift_date.strftime("%A, %-m/%d/%Y")},
+          Time: #{shift.shift_start.strftime("%l:%M %P")}", shift %>
+      </p>
+    <% end %>
+  </div>
+</section>
