@@ -21,6 +21,13 @@ Rails.application.routes.draw do
     resources :shifts
   end
 
+  resources :shifts do
+    member do
+      post "take" => "shift_memberships#create"
+      delete "return" => "shift_memberships#destroy"
+    end
+  end
+
   resources :manager_profiles, only: [:new, :create]
   resources :bartender_profiles, only: [:new, :create]
 end
