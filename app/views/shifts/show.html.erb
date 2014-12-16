@@ -1,8 +1,6 @@
 <section class="container">
   <h1 class="profile"><%= @shift.bar_name %></h1>
 
-  <%= render @shift, bar: @shift.bar %>
-
   <% if current_user.manager? %>
     <%= render "manager", shift: @shift, user: current_user %>
   <% else %>

@@ -5,16 +5,20 @@
     </p>
   <% end %>
   <div>
-    <%= form.label :shift_date %>
+    <%= form.label :shift_date, "Date" %>
     <%= form.date_field :shift_date %>
   </div>
   <div>
-    <%= form.label :shift_start %>
+    <%= form.label :shift_start, "Start Time" %>
     <%= form.time_field :shift_start %>
   </div>
   <div>
-    <%= form.label :details %>
+    <%= form.label :details, "Details/Special Instructions" %>
     <%= form.text_area :details %>
+  </div>
+  <div>
+    <%= form.label :bartender_count, "# Bartenders Needed" %>
+    <%= form.number_field :bartender_count %>
   </div>
   <div>
     <%= form.submit %>

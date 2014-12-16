@@ -1,9 +1,13 @@
 <section class="container">
-  <h4 class="results">Your Bars</h4>
+  <h2 class="results">Your Shifts</h2>
+
+  <%= render "shifts", shifts: user.shifts.by_most_recent %>
+
+  <h2 class="results">Your Bars</h2>
 
   <%= render user.bars.order(name: :asc) %>
 
-  <h4>
+  <h2>
     <%= link_to "The Guesting Bars", bars_path, class: "button" %>
-  </h4>
+  </h2>
 </section>

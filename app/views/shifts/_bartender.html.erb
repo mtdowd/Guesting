@@ -1,4 +1,7 @@
 <section class="container">
+
+  <%= render shift, bar: shift.bar %>
+
   <% if user.working?(shift) %>
     <%= button_to(
       "Give Shift Back",
