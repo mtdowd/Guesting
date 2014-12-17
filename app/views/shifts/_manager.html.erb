@@ -6,6 +6,9 @@
     <p class="button">
       <%= link_to "Update Shift", edit_bar_shift_path(shift.bar, shift) %>
     </p>
+    <p class="button secondary">
+      <%= link_to "Shift Results", @shift_metric_path %>
+    </p>
     <p>
       <%= button_to(
         "Delete Shift",
