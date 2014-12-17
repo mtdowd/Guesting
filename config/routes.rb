@@ -18,6 +18,9 @@ Rails.application.routes.draw do
       post "join" => "bar_gig_memberships#create"
       delete "leave" => "bar_gig_memberships#destroy"
     end
+    member do
+      get "report" => "reports#show"
+    end
     resources :shifts
   end
 
