@@ -1,9 +1,7 @@
-<section class="container">
-  <%= render @bar, user: current_user %>
+<%= render @bar, user: current_user %>
 
-  <% if current_user.manager? %>
-    <%= render "manager", bar: @bar, user: current_user %>
-  <% else %>
-    <%= render "bartender", bar: @bar, user: current_user %>
-  <% end %>
-</section>
+<% if current_user.manager? %>
+  <%= render "manager", bar: @bar, user: current_user %>
+<% else %>
+  <%= render "bartender", bar: @bar, user: current_user %>
+<% end %>
