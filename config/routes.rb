@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       post "take" => "shift_memberships#create"
       delete "return" => "shift_memberships#destroy"
     end
+    resource :shift_metric
   end
 
   resources :manager_profiles, only: [:new, :create]

@@ -1,0 +1,18 @@
+<%= form_for shift_metric, url: shift_shift_metric_path, html: { class: "no-info" } do |form| %>
+  <% if shift_metric.errors.any? %>
+    <p>
+      <%= render "error_messages", errors: shift_metric.errors %>
+    </p>
+  <% end %>
+  <div>
+    <%= form.label :sales, "Shift Sales" %>
+    <%= form.number_field :sales %>
+  </div>
+  <div>
+    <%= form.label :patron_count, "Patron Count" %>
+    <%= form.number_field :patron_count %>
+  </div>
+  <div>
+    <%= form.submit "Add Metrics" %>
+  </div>
+<% end %>

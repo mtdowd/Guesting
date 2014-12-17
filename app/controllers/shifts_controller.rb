@@ -23,6 +23,7 @@ class ShiftsController < ApplicationController
   end
 
   def show
+    @shift_metric_path = shift_metric_profile_path(@shift)
   end
 
   def edit
@@ -40,6 +41,14 @@ class ShiftsController < ApplicationController
     @shift.destroy
 
     redirect_to bar_shifts_path(@shift.bar)
+  end
+
+  def shift_metric_profile_path(shift)
+    if shift.shift_metric.nil?
+      new_shift_shift_metric_path(shift)
+    else
+      shift_shift_metric_path(shift)
+    end
   end
 
   private

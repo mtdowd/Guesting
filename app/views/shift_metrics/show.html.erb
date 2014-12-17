@@ -1,0 +1,27 @@
+<h1 class="profile"><%= @shift.bar_name %></h1>
+
+<section class="container">
+    <p>
+      <%= "Shift Results For: #{@shift.shift_date.strftime("%A, %-m/%d/%Y")},
+        Time: #{@shift.shift_start.strftime("%l:%M %P")}" %>
+    </p>
+    <h3>Sales: <%= number_to_currency(@shift.sales) %></h3>
+    <h3>Patrons: <%= @shift.patron_count %></h3>
+    <h3>Guest Bartenders:</h3>
+    <ul><%= render @shift.users %></ul>
+</section>
+
+<p>
+  <%= link_to(
+    "Update Results",
+    edit_shift_shift_metric_path(@shift),
+    class: "button secondary"
+  ) %>
+</p>
+<p class="title-ha">
+  <%= link_to(
+    "Return to Shift",
+    shift_path(@shift),
+    class: "button secondary"
+  ) %>
+</p>

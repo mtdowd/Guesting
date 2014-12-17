@@ -1,9 +1,7 @@
-<section class="container">
-  <h1 class="profile"><%= @shift.bar_name %></h1>
+<h1 class="profile"><%= @shift.bar_name %></h1>
 
-  <% if current_user.manager? %>
-    <%= render "manager", shift: @shift, user: current_user %>
-  <% else %>
-    <%= render "bartender", shift: @shift, user: current_user %>
-  <% end %>
-</section>
+<% if current_user.manager? %>
+  <%= render "manager", shift: @shift, user: current_user %>
+<% else %>
+  <%= render "bartender", shift: @shift, user: current_user %>
+<% end %>
