@@ -1,5 +1,10 @@
 <section class="container">
-  <% if current_user.owns?(@bar) %>
+  <% if current_user.owns?(bar) %>
+    <p class="title-ha">
+      <%= link_to "Reports",
+        report_bar_path(bar),
+        class: "button secondary" %>
+    </p>
     <p>
       <%= link_to "Current Shifts",
         bar_shifts_path(bar),
@@ -7,11 +12,11 @@
     </p>
     <p>
       <%= link_to "Update Bar Information",
-        edit_bar_path(@bar),
+        edit_bar_path(bar),
         class: "button" %>
     </p>
     <p>
-      <%= button_to "Delete Bar", bar_path(@bar),
+      <%= button_to "Delete Bar", bar_path(bar),
         method: :delete,
         data: { confirm: "Please confirm deletion" } %>
     </p>

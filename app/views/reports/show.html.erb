@@ -1,0 +1,19 @@
+<h1>Report for <%= @report.bar_name %></h1>
+
+<div class="container">
+  <% @report.bartender_reports.each do |bartender_report| %>
+    <div>
+      <%= bartender_report.name %>
+      <div class="container">
+        <p>
+          Total Sales: <%= number_to_currency(bartender_report.total_sales) %>
+        </p>
+        <p>
+          Average Sales/Shift: <%= number_to_currency(
+            bartender_report.average_sales_per_shift
+          ) %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
